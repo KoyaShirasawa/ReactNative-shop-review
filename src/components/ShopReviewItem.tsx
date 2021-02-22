@@ -45,7 +45,8 @@ export const ShopReviewItem: React.FC<Props> = ({shop, onPress}: Props) => {
 const styles = StyleSheet.create({
     container: {
         width: CONTAINER_WIDTH,
-        padding: 16
+        padding: 16,
+        // backgroundColor: "#FFF",
     },
     image: {
         width: IMAGE_WIDTH,

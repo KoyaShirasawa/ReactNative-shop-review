@@ -8,6 +8,7 @@ import { ShopReviewItem } from "../components/ShopReviewItem";
 import { Shop } from "../types/shop";
 import {StackNavigationProp} from '@react-navigation/stack';
 import { RootStackParamList } from "../types/navigation";
+import { FloatingActionButton } from "../components/FloatingActionButton";
 
 type Props = {
   navigation: StackNavigationProp<RootStackParamList, "Home">
@@ -37,10 +38,14 @@ export const HomeScreen = ({navigation}: Props) => {
       <FlatList
         data={shops}
         renderItem={({ item }: { item: Shop }) => (
-          <ShopReviewItem shop={item} onPress={() => onPressShop(item)}/>
+          <ShopReviewItem shop={item} onPress={() => onPressShop(item)} />
         )}
         keyExtractor={(item, index) => index.toString()}
         numColumns={2}
+      />
+      <FloatingActionButton
+        iconName="plus"
+        onPress={() => navigation.navigate("")}
       />
     </SafeAreaView>
   );
@@ -49,7 +54,7 @@ export const HomeScreen = ({navigation}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#F1F0E4",
     alignItems: "center",
     justifyContent: "center",
   },
